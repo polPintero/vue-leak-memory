@@ -26,8 +26,8 @@ server.on("request", (req, res) => {
   const pathname = urlParse.pathname === "/" ? "index.html" : urlParse.pathname;
   fs.readFile(pathname, (err, data) => {
     if (err) {
-      resp.writeHead(200, { "Content-Type": "text/plain" });
-      resp.end("Something wrong");
+      res.writeHead(200, { "Content-Type": "text/plain" });
+      res.end("Something wrong");
       console.log(err);
       return;
     }
